@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Справочная информация</title>
+  <meta name="description"
+    content="На этой странице представлена справочная информация о системе." />
+  <link href="/css/about_system_styles/index.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="AboutTheDevelopers" />
+</head>
+
+<body>
+   <!-- Шапка сайта -->
+  <header class="header">
+    <div class="header__container container">
+      
+      <!-- Логотип -->
+      <div class="logo header__logo">
+        <img src="/images/logo.png" alt="Volunteering" width="200" height="50" />
+      </div>
+
+      <!-- Заголовок страницы -->
+      <h1 class="header__headline">Справочная информация</h1>
+
+      <!-- Кнопка вызова меню (бургер) -->
+      <div class="header__button-place">
+        <button id="menuButton" class="menu-button button">
+          <span class="menu-button__line"></span>
+          <span class="menu-button__line"></span>
+          <span class="menu-button__line"></span>
+        </button>
+      </div>
+
+      <!-- Диалоговое окно меню -->
+      <div class="menu-dialog" id="menuDialog">
+        <div class="menu-dialog__container">
+          
+          <!-- Шапка меню: заголовок + кнопка закрытия -->
+          <div class="menu-dialog__header">
+            <h2 class="menu-dialog__headline headline">Оглавление</h2>
+            <button class="menu-dialog__close-button" type="button">
+              <span class="menu-dialog__close-line"></span>
+              <span class="menu-dialog__close-line"></span>
+            </button>
+          </div>
+
+          <!-- Навигация с якорными ссылками -->
+          <nav class="menu-dialog__nav">
+            <ul class="menu-dialog__list">
+              <li class="menu-dialog__item">
+                <a href="#introduction__headline" class="menu-dialog__link">Введение</a>
+              </li>
+              <li class="menu-dialog__item">
+                <a href="#general-home-page__headline" class="menu-dialog__link">Главная страница (Общая)</a>
+              </li>
+              <li class="menu-dialog__item">
+                <a href="#sistem-auth__headline" class="menu-dialog__link">Авторизация и запуск системы</a>
+              </li>
+              <li class="menu-dialog__item">
+                <a href="#organizer-work__headline" class="menu-dialog__link">Работа в режиме организатора</a>
+              </li>
+              <li class="menu-dialog__item">
+                <a href="#volonteer-work__headline" class="menu-dialog__link">Работа в режиме волонтёра</a>
+              </li>
+              <li class="menu-dialog__item">
+                <a href="#work-end__headline" class="menu-dialog__link">Завершение работы</a>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+      
+    </div>
+  </header>
+
+ <!-- Основная часть -->
+  <main class="main">
+    <div class="main__container container">
+      
+      <!-- Секция 1: Введение -->
+      <section class="introduction">
+        <div class="introduction__container container">
+          <!-- Якорь для меню -->
+          <h2 id="introduction__headline" class="introduction__headline headline">Введение</h2>
+          <!-- Описание системы -->
+          <p class="introduction__text">Автоматизированная система «Приложение для помощи организации мероприятий с
+            привлечением волонтёров» предназначена для автоматизации процессов организации мероприятий с участием
+            волонтёров. Система позволяет осуществлять регистрацию волонтёров, создание и модерацию мероприятий
+            администратором, подачу заявок на участие, их обработку, а также информирование пользователей об актуальном
+            состоянии заявок. Система обеспечивает разграничение прав доступа на основе ролевой модели (администратор и
+            волонтёр), поддерживает фильтрацию мероприятий по трём категориям (территориальный охват, направление
+            деятельности, формат участия) и предоставляет возможность просмотра истории поданных заявок.</p>
+        </div>
+      </section>
+
+      <!-- Секция 2: Главная страница (Общая) -->
+      <section class="general-home-page">
+        <div class="general-home-page__container container">
+          <!-- Якорь для меню -->
+          <h2 id="general-home-page__headline" class="general-home-page__headline headline">Главная страница (Общая)</h2>
+          <!-- Описание главной страницы для неавторизованных пользователей -->
+          <p class="general-home-page__text">Главная страница для неавторизованных пользователей содержит навигационную
+            панель с темой проекта, приветственное сообщение «Добро пожаловать!» и краткое описание проекта. На странице
+            представлены карточки мероприятий, каждая из которых включает краткую информацию о мероприятии. Далее идет
+            раздел, который  содержит описание возможностей реализации, включая общие возможности, которые система
+            предоставляет волонтёру. Также на странице присутствует призыв к авторизации: «Войди/зарегистрируйся и стань
+            частью нашей платформы». В нижней части страницы расположен подвал с дополнительными предписаниями о
+            проекте.
+            Для продолжения взаимодействия с системой пользователь должен нажать кнопку входа или регистрации для
+            перехода
+            к форме авторизации или регистрации волонтёра.</p>
+        </div>
+      </section>
+
+      <!-- Секция 3: авторизация и запуск системы -->
+      <section class="sistem-auth">
+        <div class="sistem-auth__container container">
+          <!-- Якорь для меню -->
+          <h2 id="sistem-auth__headline" class="sistem-auth__headline headline">Авторизация и запуск системы</h2>
+
+          <!-- Подсекция: Форма авторизации -->
+          <div class="form-auth">
+            <h3 class="form-auth__headline headline">Форма авторизации</h3>
+            <div class="form-auth__container container">
+              <!-- Описание формы авторизации -->
+              <p class="form-auth__text">Для входа в систему необходимо нажать кнопку «Войти» в правом верхнем углу
+                страницы. Открывается форма авторизации с полями ввода логина и пароля. Система проверяет корректность
+                введённых данных. При успешной авторизации интерфейс настраивается в соответствии с ролью пользователя
+                (администратор или волонтёр). При вводе неверных данных система выдаёт сообщение об ошибке. Для
+                обеспечения
+                безопасности выполняется блокировка учётной записи после 5 неудачных попыток входа, а также
+                автоматическое
+                завершение сессии при неактивности более 30 дней.</p>
+              <!-- Скриншот формы авторизации -->
+              <img src="/images/auth-apperance.png"
+                alt="Authorization page interface with login and password fields" class="form-auth__auth-appearance"
+                width="700" height="450">
+            </div>
+          </div>
+
+          <!-- Подсекция: Регистрация волонтёра -->
+          <div class="volonteer-reg">
+            <h3 class="volonteer-reg__headline headline">Регистрация волонтёра</h3>
+            <div class="volonteer-reg__container container">
+              <!-- Описание формы регистрации -->
+              <p class="volonteer-reg__text">Если пользователь не зарегистрирован в системе, на странице авторизации
+                предусмотрена ссылка «Зарегистрироваться», которая ведёт к форме регистрации волонтёра. Форма
+                регистрации содержит поля: логин (от 3 до 20 символов), пароль и подтверждение пароля (от 8 до 25
+                символов), ФИО (от 2 до 40 символов), номер телефона (11 символов), электронная почта (от 6 до 54
+                символов), пол (переключатель), дата рождения (календарь), владение языками (выпадающий список), опыт
+                деятельности (мультивыбор), а также возможность загрузки фотографии профиля. При загрузке фотографии
+                система принимает файлы форматов JPEG, PNG, WEBP и контролирует допустимые размеры изображения: не менее
+                200x200 px и не более 1024x1024 px. Валидация всех полей производится автоматически с выводом сообщений
+                в случае ошибок ввода. После заполнения всех обязательных полей и нажатия кнопки «Зарегистрироваться»
+                учётная запись создаётся, и пользователь автоматически переходит к главной странице волонтёра.</p>
+              <!-- Скриншот формы регистрации -->
+              <img src="/images/reg-appearance.png"
+                alt="Volunteer registration form with personal information fields" class="volonteer-reg__reg-appearance"
+                width="650" height="700">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция 4: Работа в режиме Организатора -->
+      <section class="organizer-work">
+        <div class="organizer-work__container container">
+          <!-- Якорь для меню -->
+          <h2 id="organizer-work__headline" class="organizer-work__headline headline">Работа в режиме Организатора</h2>
+
+          <!-- Подсекция: Главная страница организатора -->
+          <div class="organizer-home-page">
+            <h3 class="organizer-home-page__headline headline">Главная страница</h3>
+            <div class="organizer-home-page__container container">
+              <p class="organizer-home-page__text">После успешной авторизации администратора открывается главная
+                страница,
+                которая содержит навигационную панель с темой проекта, приветственное сообщение «Добро пожаловать!» и
+                краткое описание проекта. На странице отображаются карточки событий, каждая из которых представляет
+                собой
+                мероприятие с краткой информацией. Также присутствует возможность добавления нового события через
+                соответствующий элемент интерфейса. В нижней части страницы расположен подвал с дополнительными
+                предписаниями о проекте.</p>
+            </div>
+          </div>
+
+          <!-- Подсекция: Создание и редактирование события -->
+          <div class="event-editor">
+            <h3 class="event-editor__headline headline">Создание и редактирование события</h3>
+            <div class="event-editor__container container">
+              <p class="event-editor__text">Для создания события администратор нажимает кнопку «Добавить событие» или
+                переходит к форме создания/редактирования события. Открывается форма, содержащая блок «Событие» с полями
+                для ввода названия события, дат проведения и описания, а также блок «Мероприятия», который позволяет
+                добавить одно или несколько мероприятий в рамках создаваемого события. Для каждого мероприятия
+                предусмотрены поля: название мероприятия, описание, дата и время проведения, место проведения,
+                необходимое
+                количество волонтёров (от 1 до 1000), три выпадающих списка для выбора категорий (территориальный охват,
+                направление деятельности, формат участия), поле рода деятельности волонтёров и поле контактного лица.
+                Кнопка «Добавить мероприятие к событию» позволяет динамически расширить блок, добавив новый набор полей
+                для ещё одного мероприятия.</p>
+              <!-- Скриншот кнопки добавления -->
+              <img src="/images/add-button.png" alt="Add event button interface for creating new events"
+                class="event-editor__add-button" width="550" height="120">
+              <!-- Скриншот формы редактирования -->
+              <img src="/images/editor-appearance.png"
+                alt="Event creation and editing form with event and activities blocks"
+                class="event-editor__editor-appearance" width="400" height="580">
+            </div>
+          </div>
+
+          <!-- Подсекция: Просмотр мероприятий в рамках события -->
+          <div class="event-activities">
+            <h3 class="event-activities__headline headline">Просмотр мероприятий в рамках события</h3>
+            <div class="event-activities__container container">
+              <p class="event-activities__text">Для просмотра мероприятий, входящих в существующее событие,
+                администратор
+                нажимает на карточку события. Открывается список всех мероприятий, относящихся к данному событию, с
+                возможностью их редактирования или удаления.</p>
+            </div>
+          </div>
+
+          <!-- Подсекция: Управление заявками -->
+          <div class="application-management">
+            <h3 class="application-management__headline headline">Управление заявками</h3>
+            <div class="application-management__container container">
+              <p class="application-management__text">Администратор может просматривать каталог заявок, где отображаются
+                заявки с данными волонтёра и мероприятия. Система обеспечивает контроль количества поданных на
+                мероприятия
+                заявок и информирование волонтёров об актуальном состоянии заявок по мере их обработки.</p>
+              <!-- Скриншот окна управления заявками -->
+              <img src="/images/application-management-window.png"
+                alt="Applications management window showing volunteer requests with statuses"
+                class="application-management__app-window" width="800" height="450">
+            </div>
+          </div>
+
+          <!-- Подсекция: Управление мероприятиями -->
+          <div class="activities-management">
+            <h3 class="activities-management__headline headline">Управление мероприятиями</h3>
+            <div class="activities-management__container container">
+              <p class="activities-management__text">Администратор может редактировать параметры существующего
+                мероприятия
+                в рамках события или удалить мероприятие из списка. Для удаления мероприятия администратор переходит в
+                список мероприятий выбранного события, выбирает нужное мероприятие и нажимает кнопку «Удалить».</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция 5: Работа в режиме Волонтёра-->
+      <section class="volonteer-work">
+        <div class="volonteer-work__container container">
+          <!-- Якорь для меню -->
+          <h2 id="volonteer-work__headline" class="volonteer-work__headline headline">Работа в режиме Волонтёра</h2>
+
+          <!-- Подсекция: Главная страница волонтёра -->
+          <div class="volonteer-home-page">
+            <h3 class="volonteer-home-page__headline headline">Главная страница</h3>
+            <div class="volonteer-home-page__container container">
+              <p class="volonteer-home-page__text">После успешной авторизации волонтёра открывается главная страница,
+                которая содержит навигационную панель  с темой проекта, приветственное сообщение «Добро пожаловать!» и
+                краткое описание проекта. На странице отображаются карточки мероприятий, каждая из которых включает
+                название мероприятия, дату и время проведения, краткое описание с указанием категорий, необходимое
+                количество волонтёров и иконки фильтрации. В нижней части страницы расположен подвал с дополнительными
+                предписаниями о проекте. Для перехода к каталогу выбора событий волонтёр нажимает на соответствующую
+                карточку мероприятия.</p>
+            </div>
+          </div>
+
+          <!-- Подсекция: Просмотр списка событий -->
+          <div class="event-list">
+            <h3 class="event-list__headline headline">Просмотр списка событий</h3>
+            <div class="event-list__container container">
+              <p class="event-list__text">Для просмотра доступных событий волонтёр использует главную
+                страницу, где представлены карточки событий. Система формирует и отображает актуальный каталог событий.
+              </p>
+              <!-- Скриншот списка событий -->
+              <img src="/images/event-list-appearance.png"
+                alt="Events catalog page with event cards for volunteers" class="event-list__list-appearance"
+                width="750" height="480">
+            </div>
+          </div>
+
+          <!-- Подсекция: Просмотр списка мероприятий в рамках события -->
+          <div class="activities-list">
+            <h3 class="activities-list__headline headline">Просмотр списка мероприятий в рамках события</h3>
+            <div class="activities-list__container container">
+              <p class="activities-list__text">Для просмотра мероприятий, входящих в конкретное событие, волонтёр
+                нажимает на карточку события. Открывается список всех мероприятий, относящихся к данному событию. Каждое
+                мероприятие отображается в виде карточки, содержащей название мероприятия, дату и время проведения,
+                краткое описание с указанием категорий, необходимое количество волонтёров и иконки фильтрации. Если
+                набор
+                участников окончен, на карточке отображается соответствующая надпись.</p>
+              <!-- Скриншот списка мероприятий -->
+              <img src="/images/activities-list-appearance.png"
+                alt="Activities list within an event showing volunteer opportunities"
+                class="activities-list__list-appearance" width="600" height="515">
+            </div>
+          </div>
+
+          <!-- Подсекция: Детальная информация о мероприятии -->
+          <div class="activities-info">
+            <h3 class="activities-info__headline headline">Детальная информация о мероприятии</h3>
+            <div class="activities-info__container container">
+              <p class="activities-info__text">Для просмотра полной информации о мероприятии волонтёр нажимает на
+                карточку
+                мероприятия. Открывается окно детальной информации, которое включает: название события (в рамках
+                которого
+                проводится мероприятие), название мероприятия, дату и время проведения, место проведения, полное
+                описание
+                с указанием категорий, необходимое количество волонтёров с указанием числа уже поданных заявок, род
+                деятельности волонтёров, контактное лицо, а также кнопку «Участвовать». Если набор участников окончен,
+                вместо кнопки отображается надпись «Набор участников окончен». Если пользователь уже подавал заявку на
+                данное мероприятие, отображается соответствующий статус: «На рассмотрении», «Подтверждена» или
+                «Отклонена».</p>
+              <!-- Скриншот карточки мероприятия -->
+              <img src="/images/activity-card.png"
+                alt="Event detailed information card with participate button and application status"
+                class="activities-info__activity-card" width="400" height="580">
+            </div>
+          </div>
+
+          <!-- Подсекция: Подача заявки на мероприятие -->
+          <div class="application-submiting">
+            <h3 class="application-submiting__headline headline">Подача заявки на мероприятие</h3>
+            <div class="application-submiting__container container">
+              <p class="application-submiting__text">При нажатии на кнопку «Участвовать» открывается диалоговое окно
+                подачи заявки с уведомлением: «Заявка на мероприятие принята! Ваш запрос будет рассмотрен
+                организатором».
+                После подтверждения заявка направляется на рассмотрение администратору. Система информирует волонтёра об
+                актуальном состоянии заявки в окне уведомлений.</p>
+              <!-- Скриншот кнопки подачи заявки -->
+              <img src="/images/submit-button.png" alt="Submit application button"
+                class="application-submiting__submit-button" width="550" height="120">
+            </div>
+          </div>
+
+          <!-- Подсекция: Мои заявки и уведомления -->
+          <div class="notifications">
+            <h3 class="notifications__headline headline">Мои заявки и уведомления</h3>
+            <div class="notifications__container container">
+              <p class="notifications__text">Волонтёр может просматривать историю поданных ранее заявок, включая
+                статусы,
+                даты, название мероприятия и название события, в рамках которого оно проводилось. Система отображает
+                уведомления об изменении статусов заявок в окне уведомлений, где представлены предложения и информация о
+                текущем состоянии поданных заявок.</p>
+              <!-- Скриншот диалога уведомлений -->
+              <img src="/images/dialog-appearance.png"
+                alt="Notifications and applications history window showing application statuses"
+                class="notifications__dialog-appearance" width="350" height="400">
+            </div>
+          </div>
+
+          <!-- Подсекция: Редактирование профиля -->
+          <div class="profile-editor">
+            <h3 class="profile-editor__headline headline">Редактирование профиля</h3>
+            <div class="profile-editor__container container">
+              <p class="profile-editor__text">Волонтёр имеет возможность редактировать свой профиль. Форма
+                редактирования
+                профиля совпадает с формой регистрации.</p>
+              <!-- Скриншот формы редактирования профиля -->
+              <img src="/images/profile-appearance.png"
+                alt="Profile editing form with personal information fields" class="profile-editor__profile-appearance"
+                width="650" height="700">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <!-- Секция 6: Завершение работы-->
+      <section class="work-end">
+        <div class="work-end__container container">
+          <!-- Якорь для меню -->
+          <h2 id="work-end__headline" class="work-end__headline headline">Завершение работы</h2>
+          <div class="work-end__inner">
+            <p class="work-end__text">Для выхода из учётной записи пользователь нажимает кнопку «Выйти» в верхней панели
+              навигации. Система завершает текущую сессию и перенаправляет пользователя на главную страницу для
+              неавторизованных пользователей. В случае неактивности более 30 дней система автоматически завершает сессию
+              для обеспечения безопасности учётной записи.</p>
+            <!-- Скриншот кнопки выхода -->
+            <img src="/images/exit-button.png" alt="Exit button in the top navigation panel"
+              class="work-end__exit-button" width="400" height="120">
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  </main>
+
+  
+  <!-- Подвал сайта -->
+  <footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__button-place">
+        <!-- Кнопка возврата на главную страницу -->
+        <a th:href="@{/back_home}" id="homeButton" class="footer__home-button button">
+          Вернуться на главную страницу
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/about_system.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сведения о разработчиках</title>
+  <meta name="description"
+    content="На этой странице представлена информация о команде специалистов, принимавших участие в создании, разработке и поддержке проекта." />
+
+  <link href="/css/about_devs_styles/index.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="AboutTheDevelopers" />
+</head>
+
+<body>
+  <!-- ШАПКА САЙТА -->
+  <header class="header">
+    <div class="header__container container">
+      <!-- Логотип -->
+      <div class="header__logo logo">
+        <img src="/images/logo.png" alt="Volunteering" width="200" height="50" />
+      </div>
+      <!-- Заголовок страницы -->
+      <h1 class="header__headline headline">Сведения о разработчиках</h1>
+    </div>
+  </header>
+
+  <!-- ОСНОВНОЕ СОДЕРЖИМОЕ -->
+  <main class="main">
+    <div class="main__container container">
+      
+      <!-- СЕКЦИЯ 1: ИНФОРМАЦИЯ ОБ УНИВЕРСИТЕТЕ -->
+      <section class="university-info">
+        <h2 class="university-info__headline headline">
+          Самарский университет, институт информатики и кибернетики
+        </h2>
+        <p class="university-info__text">
+          Курсовой проект по дисциплине “Программная инженерия”<br> по теме
+          “Приложение для помощи организации мероприятий с привлечением
+          волонтёров“
+        </p>
+      </section>
+
+      <!-- СЕКЦИЯ 2: ИНФОРМАЦИЯ О РАЗРАБОТЧИКАХ -->
+      <section class="developers-info">
+        <h2 class="developers-info__headline headline">
+          Разработчики (обучающиеся группы 6301-020302D):
+        </h2>
+        
+        <!-- Список разработчиков -->
+        <ul class="developers-info__list">
+          <li class="developers-info__list-item">Свистун С. И.</li>
+          <li class="developers-info__list-item">Микуров Д. Н.</li> 
+          <li class="developers-info__list-item">Кокорев М. Д.</li>
+        </ul>
+
+        <!-- Год создания -->
+        <time datetime="2026" class="developers-info__time">2026</time>
+
+        <!-- Блок с кнопками -->
+        <div class="developers-info__button-place">
+          <a th:href="@{/home/about_system}" id="sistemButton" class="developers-info__sistem-button button">
+            О системе
+          </a>
+          <a th:href="@{/back_home}" id="homeButton" class="developers-info__home-button button">
+            Вернуться на главную страницу
+          </a>
+        </div>
+      </section>
+      
+    </div>
+  </main>
+
+  <script src=""></script>
+</body>
+
+</html>

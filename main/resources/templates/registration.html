@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрация</title>
+    <meta name="description" content="На этой странице представлен процесс регистрации системы." />
+    <link href="/css/registration_styles/index.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="AboutTheDevelopers" />
+</head>
+
+<body>
+    <section class="reg-layout">
+        <div class="reg-layout__container container">
+
+            <!-- Шапка -->
+            <div class="reg-card__header">
+                <div class="reg-card__logo logo">
+                    <img src="/images/logo.png" alt="Volunteering" width="200" height="50" />
+                </div>
+                <a th:href="@{home/about_devs}" id="sistemButton" class="reg-card__sistem-button button">?</a>
+            </div>
+
+            <!-- Заголовок и ссылка на авторизацию -->
+            <div class="reg-card__body">
+                <h1 class="reg-card__headline headline">Регистрация</h1>
+                <p class="reg-card__text">Уже есть аккаунт? <a th:href="@{login}" class="reg-card__auth-link">Авторизоваться</a></p>
+            </div>
+
+            <!-- Форма регистрации -->
+            <form class="reg-form" th:action="@{registration}" th:object="${userForm}"  method="POST" enctype="multipart/form-data" novalidate>
+
+                <!-- Блок фотографии профиля -->
+                <div class="reg-form__photo-block">
+                    <div class="reg-form__photo-area">
+                        <span class="reg-form__photo-title">Фотография профиля</span>
+                        <span class="reg-form__photo-hint">200×200 – 1024×1024 (JPEG, PNG, WEBP)</span>
+                    </div>
+                    <div class="reg-form__photo-upload">
+                        <input type="file" id="avatar" name="profile_picture" accept="image/jpeg,image/png,image/webp" class="reg-form__photo-input" />
+                        <span class="reg-form__photo-button">Загрузить</span>
+                    </div>
+                </div>
+
+                <!-- Строка 1: ФИО (левая часть) + Логин, Пароль, Повтор пароля (правая часть) -->
+                <div class="reg-form__row reg-form__row--first">
+                    <!-- Левая часть: Логин, Пароль, Повтор пароля -->
+                    <div class="reg-form__column reg-form__column--auth">
+                        <div class="reg-form__group reg-form__group--error">
+                            <label for="login" class="reg-form__label">Логин:</label>
+                            <input type="text" id="login" name="username" class="reg-form__input reg-form__input--error"
+                                   minlength="3" maxlength="20" required placeholder="IvanSvistun" />
+                            <div class="reg-form__error-message"></div>
+                        </div>
+                        <div class="reg-form__group">
+                            <label for="password" class="reg-form__label">Пароль:</label>
+                            <input type="password" id="password" name="password" class="reg-form__input" 
+                                   minlength="8" maxlength="25" required placeholder="••••••••••" />
+                        </div>
+                        <div class="reg-form__group">
+                            <label for="password_confirm" class="reg-form__label">Повтор пароля:</label>
+                            <input type="password" id="password_confirm" name="passwordConfirm" class="reg-form__input"
+                                   required placeholder="Повторите пароль" />
+                        </div>
+                    </div>
+
+                    <!-- Правая часть: ФИО -->
+                    <div class="reg-form__column reg-form__column--fio">
+                        <div class="reg-form__group">
+                            <label for="lastname" class="reg-form__label">Фамилия:</label>
+                            <input type="text" id="lastname" name="lastName" class="reg-form__input"
+                                   minlength="2" maxlength="40" placeholder="Иванов" />
+                        </div>
+                        <div class="reg-form__group">
+                            <label for="firstname" class="reg-form__label">Имя:</label>
+                            <input type="text" id="firstname" name="firstName" class="reg-form__input"
+                                   minlength="2" maxlength="40" placeholder="Иван" />
+                        </div>
+                        <div class="reg-form__group">
+                            <label for="patronymic" class="reg-form__label">Отчество:</label>
+                            <input type="text" id="patronymic" name="middleName" class="reg-form__input"
+                                   minlength="2" maxlength="40" placeholder="Иванович" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Строка 2: Номер волонтёрской книжки (на всю ширину) -->
+                <div class="reg-form__row reg-form__row--full">
+                    <div class="reg-form__group reg-form__group--full">
+                        <label for="volunteer_id" class="reg-form__label">Номер волонтёрской книжки:</label>
+                        <input type="text" id="volunteer_id" name="volunteerBookId" class="reg-form__input"
+                               maxlength="20" placeholder="ВК-1234567890" />
+                    </div>
+                </div>
+
+                <!-- Строка 3: Дата рождения, опыт участия (левая часть) + Почта, телефон, доп язык (правая часть) -->
+                <div class="reg-form__row reg-form__row--third">
+                    <!-- Левая часть: Дата рождения + Опыт участия -->
+                    <div class="reg-form__column reg-form__column--personal">
+                        <div class="reg-form__group">
+                            <label for="birthdate" class="reg-form__label">Дата рождения:</label>
+                            <input type="date" id="birthdate" name="birthDate" class="reg-form__input reg-form__birthdate" />
+                        </div>
+                        <div class="reg-form__group">
+                            <label class="reg-form__label">Опыт участия:</label>
+                            <div class="reg-form__checkboxes">
+                                <label class="reg-form__checkbox">
+                                    <input type="checkbox" name="experiences" value="SPORTS" checked />
+                                    <span>Спортивные мероприятия</span>
+                                </label>
+                                <label class="reg-form__checkbox">
+                                    <input type="checkbox" name="experiences" value="CULTURAL" />
+                                    <span>Культурные мероприятия</span>
+                                </label>
+                                <label class="reg-form__checkbox">
+                                    <input type="checkbox" name="experiences" value="EDUCATIONAL" />
+                                    <span>Образовательные мероприятия</span>
+                                </label>
+                                <label class="reg-form__checkbox">
+                                    <input type="checkbox" name="experiences" value="SOCIAL" />
+                                    <span>Социальные мероприятия</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Правая часть: Почта, Телефон, Дополнительный язык -->
+                    <div class="reg-form__column reg-form__column--contacts">
+                        <div class="reg-form__group">
+                            <label for="email" class="reg-form__label">Электронная почта:</label>
+                            <input type="email" id="email" name="email" class="reg-form__input" 
+                                   minlength="6" maxlength="54" required placeholder="ivan@example.com" />
+                        </div>
+                        <div class="reg-form__group">
+                            <label for="phone" class="reg-form__label">Номер телефона:</label>
+                            <input type="tel" id="phone" name="phoneNumber" class="reg-form__input"
+                                   maxlength="11" placeholder="+7 999 123-45-67" />
+                        </div>
+                        <div class="reg-form__group">
+                            <label for="additional_lang" class="reg-form__label">Дополнительный язык:</label>
+                            <select id="additional_lang" name="additionalLanguage" class="reg-form__select">
+                                <option value="">Не выбран</option>
+                                <option value="english">Английский</option>
+                                <option value="german">Немецкий</option>
+                                <option value="french">Французский</option>
+                                <option value="spanish">Испанский</option>
+                                <option value="chinese">Китайский</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Строка 4: Кнопка регистрации (на всю ширину, по центру) -->
+                <div class="reg-form__row reg-form__row--submit">
+                    <button type="submit" class="reg-form__submit-button">
+                        Зарегистрироваться
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+    
+    <script src=""></script>
+</body>
+
+</html>

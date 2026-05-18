@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Авторизация</title>
+  <meta name="description" content="На этой странице представлен процесс авторизации системы." />
+  <link href="/css/login_styles/index.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Authorization" />
+</head>
+
+<body>
+  <!-- СТРАНИЦА АВТОРИЗАЦИИ -->
+  <section class="auth-layout">
+    <div class="auth-layout__container container">
+
+      <!-- ЛЕВАЯ КОЛОНКА: ФОРМА АВТОРИЗАЦИИ -->
+      <div class="auth-layout__form">
+        <div class="auth-card">
+
+          <!-- Шапка карточки: логотип + кнопка справки -->
+          <div class="auth-card__header">
+            <div class="auth-card__logo logo">
+              <img src="/images/logo.png" alt="Volunteering" width="200" height="50" />
+            </div>
+            <a th:href="@{home/about_system}" id="sistemButton" class="auth-card__sistem-button button">?</a>
+          </div>
+
+          <!-- Основное содержимое карточки -->
+          <div class="auth-card__body">
+            <!-- Заголовок -->
+            <h1 class="auth-card__headline headline">Войти</h1>
+
+            <!-- Ссылка на регистрацию -->
+            <p class="auth-card__text">
+              Ещё нет аккаунта?
+              <a th:href="@{registration}" class="auth-card__reg-link">Зарегистрироваться</a>
+            </p>
+
+            <!-- Форма авторизации -->
+            <form class="auth-form" th:action="@{/perform-login}" method="POST" novalidate>
+              <div class="auth-form__container container">
+
+                <!-- Поле: Логин -->
+                <div class="auth-form__group">
+                  <label for="login" class="auth-form__label">
+                    Логин:
+                  </label>
+                  <input type="text" id="login" name="username" class="auth-form__input" placeholder="IvanSvistun" required
+                    autocomplete="username" />
+                  <div class="auth-form__error" aria-live="polite"></div>
+                </div>
+
+                <!-- Поле: Пароль -->
+                <div class="auth-form__group">
+                  <label for="password" class="auth-form__label">
+                    Пароль:
+                  </label>
+                  <input type="password" id="password" name="password" class="auth-form__input" placeholder="••••••••"
+                    required autocomplete="current-password" />
+                  <div class="auth-form__error" aria-live="polite"></div>
+                </div>
+
+                <div th:if="${param.error}" class="alert alert-error">
+                  Wrong name or password.
+                </div>
+
+              </div>
+
+              <!-- Кнопка отправки -->
+              <button type="submit" class="auth-form__submit-button">
+                Войти
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ПРАВАЯ КОЛОНКА: HERO-ИЗОБРАЖЕНИЕ -->
+      <div class="auth-layout__hero">
+        <div class="auth-hero">
+          <img src="/images/to-do-list.png" alt="A man stands next to a to-do list with a pencil in his hand."
+            class="auth-hero__to-do-list" width="588" height="562" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src=""></script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Волонтёрство — Волонтёр</title>
+    <meta name="description" content="Главная страница системы для авторизованных волонтёров." />
+    <link href="/css/volunteer_home_styles/index.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Volunteer" />
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="header__container container">
+
+            <!-- Заголовок страницы -->
+            <h1 class="header__headline headline visually-hidden">Волонтёрство — Волонтёр</h1>
+
+            <div class="header__content-group">
+                <!-- Логотип -->
+                <div class="header__logo logo">
+                    <img src="/images/logo.png" alt="Volunteering" width="200" height="50" />
+                </div>
+
+                <!-- Кнопка справочной информации -->
+                <a th:href="@{home/about_devs}" id="sistemButton" class="header__sistem-button button">?</a>
+
+                <!-- Кнопка вызова меню (бургер) -->
+                <div class="header__button-place">
+                    <button id="menuButton" class="menu-button button">
+                        <span class="menu-button__line"></span>
+                        <span class="menu-button__line"></span>
+                        <span class="menu-button__line"></span>
+                    </button>
+                </div>
+
+                <!-- Кнопка уведомлений -->
+                <button id="notificationsButton" class="header__notifications-button button">
+                    <img src="/images/Eye.png" alt="The eye looking forward." class="header__notifications-icon"
+                        width="35" height="20">
+                </button>
+
+                <!-- Кнопка редактирования профиля -->
+                <a href="#" id="profileButton" class="header__profile-button button">
+                    <img src="/images/Smile.png" alt="Smiley." class="header__profile-icon" width="33"
+                        height="33">
+                </a>
+            </div>
+
+            <!-- Кнопка выхода -->
+            <div>
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" value="Logout" id="logoutButton" class="header__logout-button button"> Выйти</button>
+                </form>
+            </div>
+
+
+            <!-- Диалоговое окно меню -->
+            <div class="menu-dialog" id="menuDialog">
+                <div class="menu-dialog__container">
+
+                    <!-- Шапка меню: заголовок + кнопка закрытия -->
+                    <div class="menu-dialog__header">
+                        <h2 class="menu-dialog__headline headline">Оглавление</h2>
+                        <button class="menu-dialog__close-button" type="button">
+                            <span class="menu-dialog__close-line"></span>
+                            <span class="menu-dialog__close-line"></span>
+                        </button>
+                    </div>
+
+                    <!-- Навигация с якорными ссылками -->
+                    <nav class="menu-dialog__nav">
+                        <ul class="menu-dialog__list">
+                            <li class="menu-dialog__item">
+                                <a href="#" class="menu-dialog__link">Краткое описание проекта</a>
+                            </li>
+                            <li class="menu-dialog__item">
+                                <a href="#" class="menu-dialog__link">Примеры мероприятий</a>
+                            </li>
+                            <li class="menu-dialog__item">
+                                <a href="#" class="menu-dialog__link">Возможности системы</a>
+                            </li>
+                            <li class="menu-dialog__item">
+                                <a href="#" class="menu-dialog__link">Участие в проекте</a>
+                            </li>
+                            <li class="menu-dialog__item">
+                                <a href="#" class="menu-dialog__link">Дополнительная информация</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero-секция (приветственная) с якорем "Краткое описание проекта" -->
+    <section id="about-project" class="hero">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h2 class="hero__headline headline">«Приложение для помощи организации мероприятий с привлечением
+                    волонтёров»</h2>
+                <hr class="hero__text-division">
+                <p class="hero__text">
+                    Платформа для автоматизации процессов поиска, координации и управления волонтёрской помощью. Система
+                    объединяет организаторов и добровольцев, упрощая создание мероприятий, подачу заявок и контроль
+                    участия.
+                </p>
+            </div>
+            <div class="hero__image">
+                <h2 class="hero__decoration-text headline">Добро пожаловать!</h2>
+                <img src="/images/hero-volunteers.png" alt="Волонтёры помогают людям" class="hero__img"
+                    width="651" height="442" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Основное содержание страницы -->
+    <main class="main">
+        <!-- Секция примеров мероприятий (карточки) с якорем "Примеры мероприятий" -->
+        <section id="events-examples" class="cards-examples">
+            <div class="cards-examples__container container">
+                <div class="cards-examples__card-place">
+
+                    <!-- Карточка мероприятия 1 (Эко-субботник, набор закрыт) -->
+                    <div class="event-card event-card--closed">
+                        <h3 class="event-card__headline headline">Эко-субботник «Чистый берег»</h3>
+
+                        <p class="event-card__organizer">ЭкоСтарт</p>
+
+                        <div class="event-card__categories">
+                            <span class="tag">Экология</span>
+                            <span class="tag">Муниципальный</span>
+                            <span class="tag">Очный</span>
+                        </div>
+
+                        <p class="event-card__datetime">15–17 мая 2026, 10:00 – 16:00</p>
+
+                        <p class="event-card__location">г. Самара, набережная, спуск у Ладьи</p>
+
+                        <div class="event-card__volunteers">
+                            <span class="event-card__volunteers-label">Волонтёров:</span>
+                            <span class="event-card__volunteers-count">30/30</span>
+                        </div>
+
+                        <button class="button event-card__button" disabled>Набор завершён</button>
+                    </div>
+
+                    <!-- Карточка мероприятия 2 (Фестиваль, набор закрыт) -->
+                    <div class="event-card event-card--closed">
+                        <h3 class="event-card__headline headline">Фестиваль «Добрая Встреча»</h3>
+
+                        <p class="event-card__organizer">Ресурсный центр добровольчества</p>
+
+                        <div class="event-card__categories">
+                            <span class="tag">Событийное</span>
+                            <span class="tag">Региональный</span>
+                            <span class="tag">Очный</span>
+                        </div>
+
+                        <p class="event-card__datetime">5–7 июня 2026, 09:00 – 20:00</p>
+
+                        <p class="event-card__location">г. Самара, Парк им. Гагарина</p>
+
+                        <div class="event-card__volunteers">
+                            <span class="event-card__volunteers-label">Волонтёров:</span>
+                            <span class="event-card__volunteers-count">50/50</span>
+                        </div>
+
+                        <button class="button event-card__button" disabled>Набор завершён</button>
+                    </div>
+
+                    <!-- Карточка мероприятия 3 (Марафон онлайн, набор открыт) -->
+                    <div class="event-card event-card--open">
+                        <h3 class="event-card__headline headline">Марафон «Помощь рядом»</h3>
+
+                        <p class="event-card__organizer">Федерация цифрового волонтёрства</p>
+
+                        <div class="event-card__categories">
+                            <span class="tag">Социальная помощь</span>
+                            <span class="tag">Всероссийский</span>
+                            <span class="tag">Онлайн</span>
+                        </div>
+
+                        <p class="event-card__datetime">20 июня 2026, 12:00 – 15:00</p>
+
+                        <p class="event-card__location">Онлайн-платформа</p>
+
+                        <div class="event-card__volunteers">
+                            <span class="event-card__volunteers-label">Волонтёров:</span>
+                            <span class="event-card__volunteers-count">15/100</span>
+                        </div>
+
+                        <button class="button event-card__button" disabled>Набор завершён</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Медиа-блок с изображением волонтёров за компьютером -->
+        <section class="media-block">
+            <div class="media-block__container container">
+                <img src="/images/volunteers-working.png"
+                    alt="Volunteers at work: a girl and a boy study a list of events on a laptop screen."
+                    class="media-block__image" width="1440" height="500">
+            </div>
+        </section>
+        <!-- Секция каталога событий -->
+        <section id="events-catalog" class="events-catalog">
+            <div class="events-catalog__container container">
+                <h2 class="events-catalog__headline headline">Каталог событий</h2>
+
+                <!-- Строка поиска и фильтрации -->
+                <div class="events-catalog__search-bar">
+                    <button class="filter-button">
+                        <span class="filter-button__line"></span>
+                        <span class="filter-button__line"></span>
+                        <span class="filter-button__line"></span>
+                    </button>
+
+                    <div class="search-wrapper">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Поиск событий">
+
+                        <button class="search-button button">
+                            <img src="/images/Search.png" alt="The eye looking forward."
+                                class="search-button__search-icon" width="30" height="15">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Контейнер для списка событий (динамически заполняется) -->
+                <div id="eventsListContainer" class="events-list">
+                    <!-- Сюда будут добавляться карточки событий через JavaScript -->
+                    <!-- Сообщение, если событий нет -->
+                    <div id="emptyEventsMessage" class="empty-events-message">
+                        <p>У вас пока нет созданных событий.</p>
+
+                        <p>Загляните позже — организаторы обязательно добавят новые события.</p>
+                    </div>
+                </div>
+
+                <!-- Пустой шаблон карточки (скрыт, используется для клонирования) -->
+                <template id="eventCardTemplate">
+                    <div class="event-item">
+                        <div class="event-item__card">
+                            <h3 class="event-item__title"></h3>
+
+                            <p class="event-item__organizer"></p>
+
+                            <div class="event-item__categories"></div>
+
+                            <p class="event-item__datetime"></p>
+
+                            <p class="event-item__location"></p>
+
+                            <div class="event-item__volunteers">
+                                <span class="event-item__volunteers-count"></span>
+                                <span class="event-item__status"></span>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <!-- Блок описания возможностей системы -->
+        <section id="capabilities" class="descr-of-capabilities">
+            <div class="descr-of-capabilities__container container">
+                <div class="descr-of-capabilities__inner">
+                    <img src="/images/loading-with-eyes.png" alt="Иллюстрация волонтёрской деятельности"
+                        class="descr-of-capabilities__logo logo" width="186" height="183">
+
+                    <p class="descr-of-capabilities__text">Создайте личный кабинет с портфолио ваших навыков (опыт,
+                        языки, компетенции). Находите мероприятия по трём критериям: территориальный охват, направление
+                        деятельности (спорт, экология, культура, медицина, образование и др.) и формат участия
+                        (очно/онлайн).
+                    </p>
+
+                    <p class="descr-of-capabilities__text">Отправляйте заявки на интересующие вас мероприятия в один
+                        клик. Отслеживайте статус вашей заявки («На рассмотрении», «Подтверждена», «Отклонена») и
+                        получайте уведомления об изменениях.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта с якорем "Дополнительная информация" -->
+    <footer id="additional-info" class="footer">
+        <div class="footer__container container">
+            <h2 class="footer__headline headline">© 2026 Приложение для помощи организации мероприятий с привлечением
+                волонтёров</h2>
+
+            <div class="footer__content">
+                <h3 class="footer__label">О проекте:</h3>
+                <p class="footer__text">Информационная система разработана в рамках курсового проектирования по
+                    дисциплине «Программная инженерия» на базе кафедры программных систем Самарского университета
+                    (Институт информатики и кибернетики). Проект реализует двухролевую модель доступа (Администратор /
+                    Волонтёр) и предназначен для автоматизации волонтёрской деятельности в соответствии с
+                    законодательством РФ.</p>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__label">Правовая информация:</h3>
+                <p class="footer__text">Вся информация носит ознакомительный характер в рамках учебного проекта.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/volunteer_home.js"></script>
+</body>
+
+</html>
